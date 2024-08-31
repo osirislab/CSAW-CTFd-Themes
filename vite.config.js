@@ -2,17 +2,23 @@ const { resolve } = require("path");
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import copy from "rollup-plugin-copy";
+import tailwindcss from "tailwindcss";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  css: {
+    postcss: {
+      plugins: [tailwindcss()],
+    },
+  },
   resolve: {
     alias: {
       "~": resolve(__dirname, "./node_modules/"),
     },
   },
   build: {
-    manifest: true,
+    manifest: "manifest.json",
     outDir: "static",
     rollupOptions: {
       plugins: [
@@ -33,6 +39,10 @@ export default defineConfig({
             },
             {
               src: "./node_modules/@fontsource/raleway/files/**/*400*-normal*",
+              dest: "static/webfonts",
+            },
+            {
+              src: "./assets/fonts/**",
               dest: "static/webfonts",
             },
             {

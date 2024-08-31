@@ -1,0 +1,176 @@
+@font-face {
+  font-family: "NCLAstonic";
+  font-style: normal;
+  font-weight: regular;
+  src: url("../webfonts/nclastonic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Iosevka Aile";
+  font-style: normal;
+  font-weight: regular;
+  src: url("../webfonts/iosevka-aile-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka Aile";
+  font-style: normal;
+  font-weight: regular;
+  src: url("../webfonts/iosevka-aile-regular-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Iosevka Aile";
+  font-style: italic;
+  font-weight: regular;
+  src: url("../webfonts/iosevka-aile-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka Aile";
+  font-style: italic;
+  font-weight: regular;
+  src: url("../webfonts/iosevka-aile-italic-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Iosevka Aile";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../webfonts/iosevka-aile-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka Aile";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../webfonts/iosevka-aile-bold-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Iosevka Aile";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../webfonts/iosevka-aile-bolditalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka Aile";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../webfonts/iosevka-aile-bolditalic-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: regular;
+  src: url("../webfonts/iosevka-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: regular;
+  src: url("../webfonts/iosevka-regular-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: italic;
+  font-weight: regular;
+  src: url("../webfonts/iosevka-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: italic;
+  font-weight: regular;
+  src: url("../webfonts/iosevka-italic-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../webfonts/iosevka-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../webfonts/iosevka-bold-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../webfonts/iosevka-bolditalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../webfonts/iosevka-bolditalic-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Galmuri11";
+  font-style: normal;
+  font-weight: regular;
+  src: url("../webfonts/galmuri11.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Galmuri11";
+  font-style: normal;
+  font-weight: regular;
+  src: url("../webfonts/galmuri11-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}
+
+@font-face {
+  font-family: "Galmuri11";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../webfonts/galmuri11-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Galmuri11";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../webfonts/galmuri11-bold-subset.woff2") format("woff2");
+  unicode-range: U+0-FF, U+131, U+152, U+153, U+2BB, U+2BC, U+2C6, U+2DA, U+2DC,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
+}

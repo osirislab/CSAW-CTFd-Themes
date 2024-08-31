@@ -1,0 +1,25 @@
+// ============================= COLOR DEFINITIONS =============================
+
+// https://www.nyu.edu/employees/resources-and-services/media-and-communications/nyu-brand-guidelines/designing-in-our-style/nyu-colors.html
+$nyu-violet: #57068c;
+$nyu-ultra-violet: #8900e1;
+$nyu-teal: #009b8a;
+
+$csaw-dark: #000000;
+$csaw-light: #ffffff;
+
+// ============================== ELEMENT MAPPINGS =============================
+// The following will be used by _bootstrap.scss to set the appropriate theme colours
+
+$custom-colors: (
+  "primary": $nyu-violet,
+  "secondary": $nyu-teal,
+  "light": $csaw-light,
+  "dark": $csaw-dark,
+  "info": #5c728f,
+);
+
+$text: $csaw-light;
+$links: $nyu-teal;
+$links-hover: $nyu-ultra-violet;
+$background: $csaw-dark;
