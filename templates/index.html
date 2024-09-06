@@ -3,17 +3,25 @@
 {% block content %}
 
 <div class="absolute h-full w-full bg-img"></div>
-<div class="pt-24 px-8 flex justify-center items-center">
-    <div class="glitch">
-        {% for n in range(8) %}
-        <h1 class="line text-center text-9xl font-extralight">CSAW QUALS</h1>
-        {% endfor %}
+<div class="py-24 px-8 flex justify-center items-center">
+    <div class="">
+        <!-- {% for n in range(8) %} -->
+        <!-- <h1 class="line text-center text-9xl font-extralight">CSAW QUALS</h1> -->
+        <!-- {% endfor %} -->
 
-        <div class="absolute -bottom-5 -right-12 rotate-[345deg] graffiti text-7xl text-secondary">
-            2024
-        </div>
+        <h1 class="graffiti text-center text-9xl">CSAW QUALS
+            <div class="absolute -bottom-5 -right-12 rotate-[345deg] graffiti text-7xl text-secondary">
+                2024
+            </div>
+        </h1>
     </div>
 </div>
 
+<div id="3D" class="h-[50vh]"></div>
 
+{% endblock %}
+
+{% block scripts %}
+{{ Assets.js("assets/js/glitch.js") }}
+{{ Assets.js("assets/js/frontpage/3d.ts") }}
 {% endblock %}

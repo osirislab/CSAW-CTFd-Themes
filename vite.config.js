@@ -1,12 +1,13 @@
-const { resolve } = require("path");
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import copy from "rollup-plugin-copy";
+import glsl from "vite-plugin-glsl";
 import tailwindcss from "tailwindcss";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), glsl({ compress: true })],
   css: {
     postcss: {
       plugins: [tailwindcss()],
@@ -19,6 +20,7 @@ export default defineConfig({
   },
   build: {
     manifest: "manifest.json",
+    sourcemap: true,
     outDir: "static",
     rollupOptions: {
       plugins: [
@@ -59,6 +61,8 @@ export default defineConfig({
         },
       },
       input: {
+        "3D": resolve(__dirname, "assets/js/frontpage/3d.ts"),
+        frontpage: resolve(__dirname, "assets/js/glitch.js"),
         index: resolve(__dirname, "assets/js/index.js"),
         page: resolve(__dirname, "assets/js/page.js"),
         setup: resolve(__dirname, "assets/js/setup.js"),
