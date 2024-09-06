@@ -32,9 +32,12 @@ body,
   font-family: "Iosevka", sans-serif;
 }
 
-.jumbotron .container {
+.jumbotron .container h1 {
   font-family: "NCLAstonic", sans-serif;
-  @apply text-8xl
+  // = 6xl tailwind size
+  font-size: 3.75rem;
+  /* 60px */
+  line-height: 1;
 }
 
 .graffiti {
