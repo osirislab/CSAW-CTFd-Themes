@@ -9,7 +9,6 @@ import {
     Vec3,
 } from "ogl";
 import { autoResize } from "./canvas";
-import * as THREE from "three"; 
 
 import render_frag from "./rendertexture.frag";
 import rect_vert from "./rect.vert";
@@ -21,7 +20,6 @@ const renderer = new Renderer({
     dpr: window.devicePixelRatio,
     autoClear: true,
 });
-(renderer as any).outputEncoding = THREE.sRGBEncoding;;
 
 const gl = renderer.gl;
 const element = document.getElementById("3D");
@@ -30,7 +28,7 @@ element?.appendChild(gl.canvas);
 gl.clearColor(0.0, 0.0, 0.0, 0.0);
 
 const camera = new Camera(gl, { fov: 35 });
-camera.position = [0, 1, 3];
+camera.position = [0, 0.5, 3];
 camera.lookAt([0, 0, 0]);
 
 const pixelWidth = 196;
@@ -45,6 +43,7 @@ const target = new RenderTarget(gl, {
     format: gl.RGBA,
     internalFormat: gl.RGBA
 });
+
 autoResize(element!, renderer, (width: number, height: number) => {
     const aspect = width / height;
     camera.perspective({ aspect });
