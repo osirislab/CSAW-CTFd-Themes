@@ -34,7 +34,7 @@ body,
 
 .jumbotron .container {
   font-family: "NCLAstonic", sans-serif;
-  // font-family: "Galmuri11", sans-serif;
+  @apply text-8xl
 }
 
 .graffiti {
