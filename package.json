@@ -17,6 +17,7 @@
     "alpinejs": "^3.9.1",
     "bootstrap": "^5.3.3",
     "bootstrap-multimodal": "~1.0.4",
+    "countup.js": "^2.8.0",
     "dayjs": "^1.11.0",
     "echarts": "^5.3.2",
     "lolight": "^1.4.0",

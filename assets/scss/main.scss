@@ -29,11 +29,6 @@ $img-dir: "/themes/csaw24/static/img";
 //  background-color: black !important;
 // }
 
-// h1,
-// h2 {
-//   font-weight: 500;
-//   letter-spacing: 2px;
-// }
 
 :root {
   // Bootstrap stuff
@@ -52,9 +47,9 @@ $img-dir: "/themes/csaw24/static/img";
   // --color-primary: $nyu-violet
 }
 
-.bg-img {
-  // background-image: url("#{$img-dir}/geo.jpg");
-}
+// .bg-img {
+// background-image: url("#{$img-dir}/geo.jpg");
+// }
 
 a {
   text-decoration: none !important;

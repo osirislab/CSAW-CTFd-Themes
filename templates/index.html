@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- <div class="absolute h-full w-full bg-img"></div> -->
-<div class="h-[80vh] flex flex-col">
+<div class="h-[85vh] flex flex-col">
     <div class="py-24">
         <div class="relative">
             <h1 class="graffiti relative w-min lg:w-max m-auto px-4 text-center text-7xl sm:text-9xl">
@@ -16,11 +16,31 @@
     </div>
 
     <div id="3D" class="flex-grow"></div>
+
+    <div class="text-center pt-10">
+        <div class="mb-4 sm:text-xl" id="countdown">
+            <p id="count-text">CTF Starts In:</p>
+            <span id="days-count">Days</span> Days
+            <span id="hours-count">Hours</span> Hours
+            <span id="mins-count">Minutes</span> Minutes
+            <span id="secs-count">Seconds</span> Seconds
+        </div>
+
+        <p class="text-lg sm:text-2xl">
+            Join the CSAW 2024 <a class="fake-link" href="https://discord.gg/csaw24-quals">discord server</a>!
+            <br>
+            Make sure to read <a class="fake-link"
+                href="https://discord.com/channels/691736704771686521/851280539112570920/1281594909002043462">the
+                rules</a>!
+        </p>
+    </div>
 </div>
+
 
 {% endblock %}
 
 {% block scripts %}
 {{ Assets.js("assets/js/glitch.js") }}
 {{ Assets.js("assets/js/frontpage/3d.ts") }}
+{{ Assets.js("assets/js/frontpage/countdown.ts") }}
 {% endblock %}

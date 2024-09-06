@@ -62,6 +62,7 @@ export default defineConfig({
       },
       input: {
         "3D": resolve(__dirname, "assets/js/frontpage/3d.ts"),
+        countdown: resolve(__dirname, "assets/js/frontpage/countdown.ts"),
         frontpage: resolve(__dirname, "assets/js/glitch.js"),
         index: resolve(__dirname, "assets/js/index.js"),
         page: resolve(__dirname, "assets/js/page.js"),
