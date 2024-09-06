@@ -51,14 +51,12 @@ camera.position.set(0, 0, 2.5);
 
 const tracker = new MouseTracker();
 
-const scale = 0.5;
-
 autoResize(el!, renderer, (width: number, height: number) => {
     const aspect = width / height;
-    // camera.perspective({ aspect });
+    const zoom = (window.innerWidth <= 640) ? 1.8 : 2.2;
 
     camera.orthographic({
-        zoom: 1.2 * aspect / 2,
+        zoom,
         left: -1 * aspect,
         right: 1 * aspect,
         bottom: -1,
@@ -69,33 +67,8 @@ autoResize(el!, renderer, (width: number, height: number) => {
 
     post.resize();
     uniforms.uResolution.value.set(gl.canvas.width, gl.canvas.height);
-
-    // scene.scale = new Vec3(scale * aspect);
 });
 
-
-// TODO: do this 'properly'
-// function resize() {
-// renderer.setSize(el?.clientWidth!, el?.clientHeight!);
-// post.resize();
-// uniforms.uResolution.value.set(gl.canvas.width, gl.canvas.height);
-// const aspect = gl.canvas.width / gl.canvas.height;
-// camera.perspective({
-// aspect: gl.canvas.width / gl.canvas.height,
-// });
-// camera.orthographic({
-// zoom: 1.2 * aspect / 2,
-// left: -1 * aspect,
-// right: 1 * aspect,
-// bottom: -1,
-// top: 1,
-// near: 0.01,
-// far: 1000,
-// });
-// }
-
-// window.addEventListener("resize", resize, false);
-// resize();
 
 const scene = new Transform();
 
@@ -131,10 +104,7 @@ let sides: any;
 let faces: any;
 
 async function loadInitial() {
-    const modelPath = "/themes/CSAW-CTFd-Themes/static/img/test3.glb";
-    // const modelPath = "/themes/CSAW-CTFd-Themes/static/img/osiris-logo-csaw-theme.glb";
-    // const modelPath = "/themes/CSAW-CTFd-Themes/static/img/csaw2.glb";
-    // const modelPath = "assets/img/csaw2.glb";
+    const modelPath = "/themes/CSAW-CTFd-Themes/static/img/osiris-logo.glb";
     const gltf = await GLTFLoader.load(gl, modelPath);
     // console.log(gltf);
 
@@ -172,29 +142,6 @@ async function loadInitial() {
 
 loadInitial();
 
-// const controls = new Orbit(camera);
-// const grid = new GridHelper(gl, { size: 10, divisions: 10 });
-// grid.position.y = -0.001; // shift down a little to avoid z-fighting with axes helper
-// grid.setParent(scene);
-
-// const axes = new AxesHelper(gl, { size: 6, symmetric: true });
-// axes.setParent(scene);
-
-// camera.position.set(-1.5, 0.35, 2.5);
-// camera.rotation.set(new Euler(...degrees(-10, -30, 0)));
-
-// scene.rotation.set(new Euler(...degrees(8.5, 22.3, 3)));
-// scene.position.set(0, -0.1, -0.3);
-
-// ["x", "y", "z"].forEach(id =>
-//   document.getElementById(id)?.addEventListener("input", setRot)
-// );
-
-// function setRot(ev: Event): void {
-//   scene.rotation[ev.target.id] = degrees(ev.target.value)[0];
-//   console.log(radians(...scene.rotation.toArray()));
-// }
-
 const pass = post.addPass({
     vertex: postVert,
     fragment: glitchEffect,
@@ -202,20 +149,14 @@ const pass = post.addPass({
     enabled: true,
 });
 
-// console.log(pass);
-
 function update(time: number) {
     requestAnimationFrame(update);
     uniforms.uTime.value = time * 0.001;
 
-    // scene.rotation.y -= 0.002;
     // For some reason this doesn't work when setting the Euler object directly
     const rot = tracker.getRotation();
     scene.rotation.x = rot.x;
     scene.rotation.y = rot.y;
-    // mesh.rotation.x += 0.03;
-    // console.log(camera.position);
-    // console.log(camera.rotation.x + " " + camera.rotation.y + " " + camera.rotation.z);
-    // controls.update();
+
     post.render({ scene, camera, sort: false });
 }
