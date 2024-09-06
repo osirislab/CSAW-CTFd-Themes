@@ -1,11 +1,6 @@
 // Note this is our own module to import bootstrap CSS
 @use "includes/utils/bootstrap";
 
-// @use "bootstrap/scss/bootstrap" as * with (
-// $body-bg: black,
-// $info: #5c728f
-// );
-
 @use "includes/components/table";
 @use "includes/components/jumbotron";
 @use "includes/components/challenge";
@@ -27,8 +22,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-// TODO: make an img-dir variable, set background image
 
 $img-dir: "/themes/csaw24/static/img";
 
@@ -60,7 +53,7 @@ $img-dir: "/themes/csaw24/static/img";
 }
 
 .bg-img {
-  background-image: url("#{$img-dir}/geo.jpg");
+  // background-image: url("#{$img-dir}/geo.jpg");
 }
 
 a {
