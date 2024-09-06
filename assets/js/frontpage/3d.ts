@@ -20,6 +20,7 @@ import outline_frag from "../../shaders/outline.frag";
 import outlineVert from "../../shaders/outline.vert";
 import glitchEffect from "../../shaders/glitch.frag";
 import postVert from "../../shaders/post.vert";
+import { MouseTracker } from "./mouse";
 
 function degrees(...angles: number[]): number[] {
     return angles.map(r => (r * Math.PI) / 180);
@@ -46,7 +47,9 @@ const uniforms = {
 };
 
 const camera = new Camera(gl);
-camera.position.z = 3;
+camera.position.set(0, 0, 2.5);
+
+const tracker = new MouseTracker();
 
 const scale = 0.5;
 
@@ -67,7 +70,7 @@ autoResize(el!, renderer, (width: number, height: number) => {
     post.resize();
     uniforms.uResolution.value.set(gl.canvas.width, gl.canvas.height);
 
-    scene.scale = new Vec3(scale * aspect);
+    // scene.scale = new Vec3(scale * aspect);
 });
 
 
@@ -133,7 +136,7 @@ async function loadInitial() {
     // const modelPath = "/themes/CSAW-CTFd-Themes/static/img/csaw2.glb";
     // const modelPath = "assets/img/csaw2.glb";
     const gltf = await GLTFLoader.load(gl, modelPath);
-    console.log(gltf);
+    // console.log(gltf);
 
     sides = gltf.scene.find((s: any) => s.name === "Sides");
     faces = gltf.scene.find((s: any) => s.name === "Faces");
@@ -177,8 +180,8 @@ loadInitial();
 // const axes = new AxesHelper(gl, { size: 6, symmetric: true });
 // axes.setParent(scene);
 
-camera.position.set(-1.5, 0.35, 2.5);
-camera.rotation.set(new Euler(...degrees(-10, -30, 0)));
+// camera.position.set(-1.5, 0.35, 2.5);
+// camera.rotation.set(new Euler(...degrees(-10, -30, 0)));
 
 // scene.rotation.set(new Euler(...degrees(8.5, 22.3, 3)));
 // scene.position.set(0, -0.1, -0.3);
@@ -205,7 +208,11 @@ function update(time: number) {
     requestAnimationFrame(update);
     uniforms.uTime.value = time * 0.001;
 
-    scene.rotation.y -= 0.002;
+    // scene.rotation.y -= 0.002;
+    // For some reason this doesn't work when setting the Euler object directly
+    const rot = tracker.getRotation();
+    scene.rotation.x = rot.x;
+    scene.rotation.y = rot.y;
     // mesh.rotation.x += 0.03;
     // console.log(camera.position);
     // console.log(camera.rotation.x + " " + camera.rotation.y + " " + camera.rotation.z);
