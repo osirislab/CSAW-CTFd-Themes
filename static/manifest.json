@@ -31,7 +31,7 @@
     "src": "assets/js/challenges.js"
   },
   "assets/js/frontpage/3d.ts": {
-    "file": "assets/3d-f39a05ed.js",
+    "file": "assets/3d-58b9a979.js",
     "isEntry": true,
     "src": "assets/js/frontpage/3d.ts"
   },
@@ -153,7 +153,7 @@
     "src": "assets/js/users/public.js"
   },
   "assets/scss/main.scss": {
-    "file": "assets/main-cc0068f2.css",
+    "file": "assets/main-04e7186e.css",
     "isEntry": true,
     "src": "assets/scss/main.scss"
   },
