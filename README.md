@@ -15,6 +15,15 @@ git subtree add --prefix CTFd/themes/core-beta git@github.com:CTFd/core-beta.git
 git subtree pull --prefix CTFd/themes/core-beta git@github.com:CTFd/core-beta.git main --squash
 ```
 
+### developement
+
+To develop based on [CTFd](https://github.com/CTFd/CTFd), please make sure you install the csaw plugin first to redirect the index page to the index.html file in the theme.
+
+```
+yarn install
+yarn build
+```
+
 ### Subtree Gotcha
 
 Make sure to use Merge Commits when dealing with the subtree here. For some reason Github's squash and commit uses the wrong line ending which causes issues with the subtree script: https://stackoverflow.com/a/47190256. 

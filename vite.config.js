@@ -1,53 +1,38 @@
-const { resolve } = require("path");
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import copy from "rollup-plugin-copy";
-import tailwindcss from "tailwindcss";
+import glsl from "vite-plugin-glsl";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  css: {
-    postcss: {
-      plugins: [tailwindcss()],
-    },
-  },
   resolve: {
     alias: {
       "~": resolve(__dirname, "./node_modules/"),
     },
   },
   build: {
-    manifest: "manifest.json",
+    manifest: true,
+    sourcemap: true,
     outDir: "static",
     rollupOptions: {
       plugins: [
+        glsl(),
         copy({
           targets: [
             // https://github.com/vitejs/vite/issues/1618#issuecomment-764579557
             {
-              src: "./node_modules/@fortawesome/fontawesome-free/webfonts/**/*",
-              dest: "static/webfonts",
+              src: "./assets/webfonts/*",
+              dest: "static/assets/webfonts",
             },
             {
-              src: "./node_modules/@fontsource/lato/files/**/*400*-normal*",
-              dest: "static/webfonts",
-            },
-            {
-              src: "./node_modules/@fontsource/lato/files/**/*700*-normal*",
-              dest: "static/webfonts",
-            },
-            {
-              src: "./node_modules/@fontsource/raleway/files/**/*400*-normal*",
-              dest: "static/webfonts",
-            },
-            {
-              src: "./assets/fonts/**",
-              dest: "static/webfonts",
-            },
-            {
-              src: "./assets/img/**",
+              src: "./assets/img/*",
               dest: "static/img",
+            },
+            {
+              src: "./node_modules/@fortawesome/fontawesome-free/webfonts/**/*",
+              dest: "static/assets/webfonts",
             },
           ],
           hook: "writeBundle",
@@ -59,6 +44,8 @@ export default defineConfig({
         },
       },
       input: {
+        "3d": resolve(__dirname, "assets/js/frontpage/3d.ts"),
+        countdown: resolve(__dirname, "assets/js/frontpage/countdown.ts"),
         index: resolve(__dirname, "assets/js/index.js"),
         page: resolve(__dirname, "assets/js/page.js"),
         setup: resolve(__dirname, "assets/js/setup.js"),
@@ -73,6 +60,7 @@ export default defineConfig({
         users_private: resolve(__dirname, "assets/js/users/private.js"),
         users_list: resolve(__dirname, "assets/js/users/list.js"),
         main: resolve(__dirname, "assets/scss/main.scss"),
+        parallax: resolve(__dirname, "assets/scss/parallax.scss"),
       },
     },
   },

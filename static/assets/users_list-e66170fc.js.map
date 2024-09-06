@@ -1,0 +1,1 @@
+{"version":3,"file":"users_list-e66170fc.js","sources":["../../assets/js/users/list.js"],"sourcesContent":["import Alpine from \"alpinejs\";\nimport CTFd from \"../index\";\n\nwindow.CTFd = CTFd;\nwindow.Alpine = Alpine;\n\nAlpine.start();\n"],"names":["CTFd","Alpine"],"mappings":"+CAGA,OAAO,KAAOA,EACd,OAAO,OAASC,EAEhBA,EAAO,MAAO"}

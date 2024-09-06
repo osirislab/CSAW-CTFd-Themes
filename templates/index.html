@@ -2,18 +2,63 @@
 
 {% block content %}
 
-<div class="absolute h-full w-full bg-img"></div>
-<div class="pt-24 px-8 flex justify-center items-center">
-    <div class="glitch">
-        {% for n in range(8) %}
-        <h1 class="line text-center text-9xl font-extralight">CSAW QUALS</h1>
-        {% endfor %}
+<style>
+    .logo-3d {
+        margin: 5% auto;
+        width: 90vw;
+        height: 45vw;
 
-        <div class="absolute -bottom-2 -right-8 rotate-[345deg] graffiti text-6xl text-secondary">
-            2024
+        @media (min-width: 768px) {
+            margin: 2% auto;
+            width: 95vw;
+            height: 20em;
+        }
+    }
+</style>
+
+<div id="3D" class="logo-3d"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
         </div>
+        <h3 class="text-center">
+            <p>Welcome to the 20th anniversary of <a href="https://csaw.io">CSAW</a>.</p>
+            <p>Read the
+                <a href="https://docs.google.com/document/u/1/d/e/2PACX-1vQd86UHImwnQxZoLFi8ShZ1DxP37dDegPyjWe40j9mIXlTdp5syPP5DAX0pGJXdpFxCVzklmVQ_wmld/pub">rules!</a>
+            </p>
+
+            <br>
+            <div id="countdown">
+                <p id="count-text">CTF Starts In:</p>
+                <span id="days-count">Days</span> Days
+                <span id="hours-count">Hours</span> Hours
+                <span id="mins-count">Minutes</span> Minutes
+                <span id="secs-count">Seconds</span> Seconds
+            </div>
+        </h3>
     </div>
 </div>
+</div>
 
+<div class="parallax-container">
+  <div class="city-color">
+    <div class="parallax city-5"> </div>
+    <div class="parallax city-4"> </div>
+    <div class="parallax city-3"> </div>
+    <div class="parallax city-2"> </div>
+  </div>
+</div>
 
+<div class="firework-container">
+  <div class="rocket-motion"><div class="orange-rocket"></div></div>
+  <div class="firework-pos"><div class="orange-firework"></div></div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ Assets.js("assets/js/page.js") }}
+{{ Assets.js("assets/js/frontpage/3d.ts") }}
+{{ Assets.js("assets/js/frontpage/countdown.ts") }}
 {% endblock %}
