@@ -7,7 +7,6 @@ import {
     GLTFLoader,
     Vec2,
     Vec4,
-    Euler,
     RendererSortable,
     Vec3,
 } from "ogl";
@@ -19,12 +18,10 @@ import vertex from "../../shaders/vertex.glsl";
 import outline_frag from "../../shaders/outline.frag";
 import outlineVert from "../../shaders/outline.vert";
 import glitchEffect from "../../shaders/glitch.frag";
+import aberrationEffect from "../../shaders/aberration.frag";
 import postVert from "../../shaders/post.vert";
 import { MouseTracker } from "./mouse";
 
-function degrees(...angles: number[]): number[] {
-    return angles.map(r => (r * Math.PI) / 180);
-}
 
 const renderer = new Renderer({
     antialias: true,
@@ -142,7 +139,14 @@ async function loadInitial() {
 
 loadInitial();
 
-const pass = post.addPass({
+const aberrationPass = post.addPass({
+    vertex: postVert,
+    fragment: aberrationEffect,
+    uniforms: uniforms,
+    enabled: true,
+});
+
+const glitchPass = post.addPass({
     vertex: postVert,
     fragment: glitchEffect,
     uniforms: uniforms,

@@ -258,26 +258,5 @@ vec4 glitchEffect(float intime, vec2 p) {
 
 void main() {
   vec2 uv = gl_FragCoord.xy / uResolution.xy;
-  vec4 glitched = glitchEffect(uTime, uv);
-  // vec4 glitched = vec4(1.0);
-
-  // Chromatic Abberation Effect
-  float amount = 0.0;
-
-  amount = (1.0 + sin(uTime * 6.0)) * 0.5;
-  amount *= 1.0 + sin(uTime * 16.0) * 0.5;
-  amount *= 1.0 + sin(uTime * 19.0) * 0.5;
-  amount *= 1.0 + sin(uTime * 27.0) * 0.5;
-  // amount = pow(amount, 3.0);
-
-  amount *= 0.001;
-
-  vec3 col;
-  col.r = texture(tMap, vec2(uv.x + amount, uv.y)).r;
-  col.g = texture(tMap, uv).g;
-  col.b = texture(tMap, vec2(uv.x - amount, uv.y)).b;
-
-  col *= (1.0 - amount * 0.5);
-
-  outColor = glitched * vec4(col, 1.0);
+  outColor = glitchEffect(uTime, uv);
 }
