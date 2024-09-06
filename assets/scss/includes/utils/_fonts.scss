@@ -52,11 +52,3 @@ body,
 .graffiti {
   font-family: "NCLAstonic";
 }
-
-.fake-link {
-  @apply text-secondary transition-all
-}
-
-.fake-link:hover {
-  @apply text-primary
-}

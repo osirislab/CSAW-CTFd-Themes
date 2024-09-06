@@ -53,6 +53,11 @@ $img-dir: "/themes/csaw24/static/img";
 
 a {
   text-decoration: none !important;
+  @apply text-secondary transition-all
+}
+
+a:hover {
+  @apply text-primary
 }
 
 blockquote {
