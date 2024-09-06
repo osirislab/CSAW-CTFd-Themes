@@ -28,7 +28,7 @@ element?.appendChild(gl.canvas);
 gl.clearColor(0.0, 0.0, 0.0, 0.0);
 
 const camera = new Camera(gl, { fov: 35 });
-camera.position = [0, 0.5, 3];
+camera.position = [0, 1, 3];
 camera.lookAt([0, 0, 0]);
 
 const pixelWidth = 196;
